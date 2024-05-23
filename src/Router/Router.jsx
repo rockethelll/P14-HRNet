@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 
+import Employees from '@/pages/Employees/Employees';
 import ErrorPage from '@/pages/ErrorPage/ErrorPage';
 import Home from '@/pages/Home/Home';
-import Test from '@/pages/Test/Test';
 
 const Router = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/test' element={<Test />} />
+      <Route path='/employees' element={<Employees />} />
       <Route path='*' element={<ErrorPage />} />
     </Routes>
   );
