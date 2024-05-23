@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
+import Button from '@/components/Button/Button';
 
 const ErrorPage = () => {
   return (
-    <div>
-      <p>Erreur 404 la page n'est pas trouvée</p>
-      <Link to='/' className='link-error'>
-        Retourner sur la page d'accueil
-      </Link>
+    <div className='container mt-20 flex flex-col items-center gap-20'>
+      <p className='text-2xl font-bold text-lime-700'>
+        Erreur 404 la page n'est pas trouvée
+      </p>
+      <Button location='/' title="Retourner sur la page d'accueil" />
     </div>
   );
 };
