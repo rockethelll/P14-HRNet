@@ -7,7 +7,7 @@ const Navbar = () => {
   const currentPath = location.pathname;
 
   return (
-    <nav className='mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8'>
+    <nav className='mx-auto max-w-screen-xl px-4 py-4 sm:px-6 lg:px-8'>
       <div className='flex flex-col items-center justify-center sm:flex-row sm:justify-between'>
         <div className='flex items-center justify-center sm:justify-start'>
           <img src='./images/HRnet.png' alt='HRnet logo' />
