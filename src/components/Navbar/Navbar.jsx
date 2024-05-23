@@ -18,11 +18,7 @@ const Navbar = () => {
 
         <div className='mt-4 flex justify-center sm:mt-0'>
           {currentPath === '/' ? (
-            <Button
-              location='/employees'
-              title='View Current Employees
-'
-            />
+            <Button location='/employees' title='View Current Employees' />
           ) : (
             <Button location='/' title='Home' />
           )}

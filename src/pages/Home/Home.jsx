@@ -8,13 +8,13 @@ const Home = () => {
         Create Employee
       </h1>
 
-      <form className='grid grid-cols-1 gap-x-4 md:grid-cols-2 lg:gap-x-8'>
+      <form className='grid grid-cols-1 gap-x-4 sm:grid-cols-2 lg:gap-x-8'>
         <div className='relative space-y-6 space-y-reverse rounded-md p-2 pb-2'>
           <span></span>
           <Input label='First Name' />
           <Input label='Last Name' />
-          <Input label='Date of Birth' />
-          <Input label='Start Date' />
+          <Input label='Date of Birth' type='date' />
+          <Input label='Start Date' type='date' />
         </div>
         <div className='relative space-y-6 space-y-reverse rounded-md border-2 p-3'>
           <span className='absolute left-20 top-[-15px] bg-white px-2 font-bold text-lime-700'>
@@ -22,13 +22,31 @@ const Home = () => {
           </span>
           <Input label='Street' />
           <Input label='City' />
-          <Input label='State' />
+          <div>
+            <label className='my-2 block text-sm font-medium text-gray-700'>
+              State
+            </label>
+            <select className='w-full rounded-md border-2 border-gray-200 bg-gray-100 py-2 pl-4'>
+              <option value='AL'>Alabama</option>
+              <option value='CA'>California</option>
+              <option value='NY'>New York</option>
+            </select>
+          </div>
           <Input label='Zip Code' />
         </div>
-        <div className='col-span-2 grid grid-cols-1 px-2'>
-          <Input label='Department' />
+        <div className='col-span-1 grid px-2 sm:col-span-2'>
+          <div>
+            <label className='my-2 block text-sm font-medium text-gray-700'>
+              Department
+            </label>
+            <select className='w-full rounded-md border-2 border-gray-200 bg-gray-100 py-2 pl-4'>
+              <option value='AL'>Sales</option>
+              <option value='CA'>Engineering</option>
+              <option value='NY'>Legal</option>
+            </select>
+          </div>
         </div>
-        <div className='col-span-1 mt-8 flex justify-center md:col-span-2'>
+        <div className='col-span-1 mt-8 flex justify-center sm:col-span-2'>
           <Button title='Save' />
         </div>
       </form>
