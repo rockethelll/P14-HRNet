@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Employees from '@/pages/Employees/Employees';
-import ErrorPage from '@/pages/ErrorPage/ErrorPage';
-import Home from '@/pages/Home/Home';
+import Employees from '@/pages/Employees';
+import ErrorPage from '@/pages/ErrorPage';
+import Home from '@/pages/Home';
 
 const Router = () => {
   return (

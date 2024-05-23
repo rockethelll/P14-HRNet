@@ -1,5 +1,8 @@
-import Button from '@/ui/Button/Button';
-import Input from '@/ui/Input/Input';
+import SelectMenu from '@/components/SelectMenu';
+import departments from '@/data/departments.json';
+import states from '@/data/states.json';
+import Button from '@/ui/Button';
+import Input from '@/ui/Input';
 
 const Home = () => {
   return (
@@ -22,29 +25,21 @@ const Home = () => {
           </span>
           <Input label='Street' />
           <Input label='City' />
-          <div>
-            <label className='my-2 block text-sm font-medium text-gray-700'>
-              State
-            </label>
-            <select className='w-full rounded-md border-2 border-gray-200 bg-gray-100 py-2 pl-4'>
-              <option value='AL'>Alabama</option>
-              <option value='CA'>California</option>
-              <option value='NY'>New York</option>
-            </select>
-          </div>
+          <SelectMenu
+            label='States'
+            data={states}
+            valueKey='abbreviation'
+            labelKey='name'
+          />
           <Input label='Zip Code' />
         </div>
         <div className='col-span-1 grid px-2 sm:col-span-2'>
-          <div>
-            <label className='my-2 block text-sm font-medium text-gray-700'>
-              Department
-            </label>
-            <select className='w-full rounded-md border-2 border-gray-200 bg-gray-100 py-2 pl-4'>
-              <option value='AL'>Sales</option>
-              <option value='CA'>Engineering</option>
-              <option value='NY'>Legal</option>
-            </select>
-          </div>
+          <SelectMenu
+            data={departments}
+            labelKey='department'
+            valueKey='department'
+            selectLabel='Departments'
+          />
         </div>
         <div className='col-span-1 mt-8 flex justify-center sm:col-span-2'>
           <Button title='Save' />

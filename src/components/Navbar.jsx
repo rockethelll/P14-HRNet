@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router';
 
-import Button from '@/ui/Button/Button';
+import Button from '@/ui/Button';
 
 const Navbar = () => {
   const location = useLocation();
