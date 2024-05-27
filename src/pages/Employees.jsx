@@ -1,13 +1,32 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import SearchBar from '@/components/SearchBar';
+
 const Employees = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   const employees = useSelector((state) => state.employee.employees);
+
+  // Filter employees based on search term
+  const filteredEmployees = employees.filter((employee) =>
+    Object.values(employee).some(
+      (value) =>
+        typeof value === 'string' &&
+        value.toLowerCase().includes(searchTerm.toLowerCase()),
+    ),
+  );
+
+  // Handle search input change
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
   return (
     <div className='container mx-auto flex max-w-screen-xl flex-col justify-center px-4 py-4 sm:px-6 lg:px-8'>
       <h1 className='mb-16 text-center font-bold text-lime-700 md:text-2xl lg:text-3xl'>
         Current Employees
       </h1>
+      <SearchBar handleChange={handleChange} searchTerm={searchTerm} />
       <table className='w-full table-auto'>
         <thead>
           <tr>
@@ -23,21 +42,18 @@ const Employees = () => {
           </tr>
         </thead>
         <tbody>
-          {employees.length > 0 ? (
-            employees.map((employee, index) => (
+          {filteredEmployees.length > 0 ? (
+            // Render filtered employees
+            filteredEmployees.map((employee, index) => (
               <tr
-                key={employee.id}
-                className={index % 2 === 0 ? 'bg-gray-100' : ''}
+                key={index}
+                className={`${index % 2 === 0 ? 'bg-gray-100' : ''} hover:bg-gray-200`}
               >
-                <td className='border-y px-4 py-2'>{employee.firstName}</td>
-                <td className='border-y px-4 py-2'>{employee.lastName}</td>
-                <td className='border-y px-4 py-2'>{employee.startDate}</td>
-                <td className='border-y px-4 py-2'>{employee.department}</td>
-                <td className='border-y px-4 py-2'>{employee.dateOfBirth}</td>
-                <td className='border-y px-4 py-2'>{employee.street}</td>
-                <td className='border-y px-4 py-2'>{employee.city}</td>
-                <td className='border-y px-4 py-2'>{employee.state}</td>
-                <td className='border-y px-4 py-2'>{employee.zipCode}</td>
+                {Object.entries(employee).map(([key, value], idx) => (
+                  <td key={idx} className='border-y px-4 py-2'>
+                    {key === 'state' ? value.toUpperCase() : value}
+                  </td>
+                ))}
               </tr>
             ))
           ) : (
@@ -46,7 +62,7 @@ const Employees = () => {
                 colSpan='9'
                 className='border-y border-black bg-gray-100 px-4 py-3 text-center font-semibold'
               >
-                No data available in table
+                No matching data found
               </td>
             </tr>
           )}
