@@ -3,7 +3,7 @@ import React from 'react';
 const EmployeeHead = () => {
   return (
     <thead>
-      <tr>
+      <tr className=''>
         <th className='px-4 py-2'>First Name</th>
         <th className='px-4 py-2'>Last Name</th>
         <th className='px-4 py-2'>Start Date</th>
