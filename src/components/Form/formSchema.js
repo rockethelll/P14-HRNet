@@ -24,7 +24,7 @@ export const formSchema = z.object({
     }),
   street: z.string().min(3, 'Street must be at least 3 characters long'),
   city: z.string().min(3, 'City must be at least 3 characters long'),
-  zip: z.string().min(5, 'Zip code must be at least 5 characters long'),
+  zipCode: z.string().min(5, 'Zip code must be at least 5 characters long'),
   state: z.string(),
   department: z.string(),
 });

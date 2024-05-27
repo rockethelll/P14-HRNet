@@ -92,7 +92,11 @@ const Form = () => {
             {errors.state.message}
           </div>
         )}
-        <Input label='Zip Code' error={errors.zip} {...register('zip')} />
+        <Input
+          label='Zip Code'
+          error={errors.zipCode}
+          {...register('zipCode')}
+        />
       </div>
       <div className='col-span-1 grid px-2 sm:col-span-2'>
         <Controller
