@@ -10,12 +10,12 @@ const Employees = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const employees = useSelector((state) => state.employee.employees);
 
-  // Filter employees based on search term
+  // Filter employees based on search term in any field of the employee object
   const filteredEmployees = employees.filter((employee) =>
-    Object.values(employee).some(
-      (value) =>
-        typeof value === 'string' &&
-        value.toLowerCase().includes(searchTerm.toLowerCase()),
+    Object.keys(employee).some(
+      (key) =>
+        typeof employee[key] === 'string' &&
+        employee[key].toLowerCase().includes(searchTerm.toLowerCase()),
     ),
   );
 
