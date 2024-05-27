@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import EmployeeHead from '@/components/EmployeeHead';
 import EmployeeRow from '@/components/EmployeeRow';
-import EntriesInfo from '@/components/EntriesInfos';
+import EntriesInfos from '@/components/EntriesInfos';
 import Paginate from '@/ui/Paginate';
 
 const EmployeeTable = ({ employees }) => {
@@ -45,7 +45,7 @@ const EmployeeTable = ({ employees }) => {
         </tbody>
       </table>
       <div className='flex items-center justify-between'>
-        <EntriesInfo
+        <EntriesInfos
           currentPage={currentPage}
           totalItems={employees.length}
           perPage={perPage}

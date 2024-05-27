@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import EmployeeTable from '@/components/EmployeeTable';
 import SearchBar from '@/components/SearchBar';
+import SelectEntriesDisplayed from '@/components/SelectEntriesDisplayed';
 import Container from '@/ui/Container';
 import Title from '@/ui/Title';
 
@@ -24,10 +25,17 @@ const Employees = () => {
     setSearchTerm(event.target.value);
   };
 
+  const handleEntriesPerPageChange = (e) => {
+    console.log(e);
+  };
+
   return (
     <Container>
       <Title title='Current Employees' />
-      <SearchBar handleChange={handleChange} searchTerm={searchTerm} />
+      <div className='mb-4 flex items-center justify-between'>
+        <SelectEntriesDisplayed onChange={handleEntriesPerPageChange} />
+        <SearchBar handleChange={handleChange} searchTerm={searchTerm} />
+      </div>
       <EmployeeTable employees={filteredEmployees} />
     </Container>
   );

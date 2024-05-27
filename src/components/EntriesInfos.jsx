@@ -1,4 +1,4 @@
-const EntriesInfo = ({ currentPage, totalItems, perPage }) => {
+const EntriesInfos = ({ currentPage, totalItems, perPage }) => {
   // Calculate the first and last entry on the current page
   const firstEntry = (currentPage - 1) * perPage + 1;
   const lastEntry = Math.min(currentPage * perPage, totalItems);
@@ -16,4 +16,4 @@ const EntriesInfo = ({ currentPage, totalItems, perPage }) => {
   );
 };
 
-export default EntriesInfo;
+export default EntriesInfos;

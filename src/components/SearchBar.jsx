@@ -1,6 +1,6 @@
 const SearchBar = ({ searchTerm, handleChange }) => {
   return (
-    <div className='mb-4 flex items-center justify-end'>
+    <div className='flex items-center justify-end'>
       <label className='pr-3'>Search</label>
       <input
         type='search'
