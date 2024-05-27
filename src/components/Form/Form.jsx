@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
@@ -7,12 +6,14 @@ import SelectMenu from '@/components/SelectMenu';
 import departments from '@/data/departments.json';
 import states from '@/data/states.json';
 import { createEmployee } from '@/state/employeeSlice';
+import { openModal } from '@/state/modalSlice';
 import Input from '@/ui/Input';
 
 import { formSchema } from './formSchema';
 
 const Form = () => {
   const dispatch = useDispatch();
+
   const {
     reset,
     control,
@@ -28,6 +29,7 @@ const Form = () => {
     try {
       dispatch(createEmployee(data));
       reset();
+      dispatch(openModal());
     } catch (error) {
       setError('root', {
         message: 'Error creating employee',
