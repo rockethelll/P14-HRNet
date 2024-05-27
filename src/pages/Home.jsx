@@ -1,8 +1,4 @@
-import SelectMenu from '@/components/SelectMenu';
-import departments from '@/data/departments.json';
-import states from '@/data/states.json';
-import Button from '@/ui/Button';
-import Input from '@/ui/Input';
+import Form from '@/components/Form/Form';
 
 const Home = () => {
   return (
@@ -10,41 +6,7 @@ const Home = () => {
       <h1 className='mb-16 text-center font-bold text-lime-700 md:text-2xl lg:text-3xl'>
         Create Employee
       </h1>
-
-      <form className='grid grid-cols-1 gap-x-4 sm:grid-cols-2 lg:gap-x-8'>
-        <div className='relative space-y-6 space-y-reverse rounded-md p-2 pb-2'>
-          <span></span>
-          <Input label='First Name' />
-          <Input label='Last Name' />
-          <Input label='Date of Birth' type='date' />
-          <Input label='Start Date' type='date' />
-        </div>
-        <div className='relative space-y-6 space-y-reverse rounded-md border-2 p-3'>
-          <span className='absolute left-20 top-[-15px] bg-white px-2 font-bold text-lime-700'>
-            Address
-          </span>
-          <Input label='Street' />
-          <Input label='City' />
-          <SelectMenu
-            label='States'
-            data={states}
-            valueKey='abbreviation'
-            labelKey='name'
-          />
-          <Input label='Zip Code' />
-        </div>
-        <div className='col-span-1 grid px-2 sm:col-span-2'>
-          <SelectMenu
-            data={departments}
-            labelKey='department'
-            valueKey='department'
-            selectLabel='Departments'
-          />
-        </div>
-        <div className='col-span-1 mt-8 flex justify-center sm:col-span-2'>
-          <Button title='Save' />
-        </div>
-      </form>
+      <Form />
     </div>
   );
 };
