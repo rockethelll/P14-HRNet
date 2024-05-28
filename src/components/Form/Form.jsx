@@ -94,6 +94,7 @@ const Form = () => {
           </div>
         )}
         <Input
+          type='number'
           label='Zip Code'
           error={errors.zipCode}
           {...register('zipCode')}
