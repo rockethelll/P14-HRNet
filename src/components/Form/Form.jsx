@@ -83,8 +83,7 @@ const Form = () => {
               data={states}
               valueKey='abbreviation'
               labelKey='name'
-              onChange={(e) => field.onChange(e.target.value.toLowerCase())}
-              value={field.value}
+              {...field}
             />
           )}
         />

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { closeModal, openModal } from '@/state/modalSlice';
+import { closeModal } from '@/state/modalSlice';
 
 // Custom hook to handle modal state
 const useModal = () => {

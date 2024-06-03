@@ -4,7 +4,7 @@ const SearchBar = ({ searchTerm, handleChange }) => {
       <label className='pr-3'>Search</label>
       <input
         type='search'
-        className='rounded border px-2 py-1'
+        className='w-[300px] rounded border border-gray-300 bg-gray-100 px-2 py-1'
         value={searchTerm}
         onChange={handleChange}
       />

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SelectMenu = React.forwardRef(
-  ({ label, data, labelKey, valueKey, onChange, value, ...rest }, ref) => {
+  ({ label, data, labelKey, valueKey, value, ...rest }, ref) => {
     return (
       <div>
         <label className='my-2 block text-sm font-medium text-gray-700'>
@@ -10,7 +10,6 @@ const SelectMenu = React.forwardRef(
         <select
           ref={ref}
           className='w-full rounded-md border-2 border-gray-200 bg-gray-100 py-2 pl-4'
-          onChange={onChange}
           value={value}
           {...rest}
         >

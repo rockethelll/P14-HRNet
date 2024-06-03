@@ -1,62 +1,42 @@
-import { useState } from 'react';
-
-import EmployeeHead from '@/components/EmployeeHead';
-import EmployeeRow from '@/components/EmployeeRow';
-import EntriesInfos from '@/components/EntriesInfos';
-import Paginate from '@/ui/Paginate';
+import { DataGrid } from '@mui/x-data-grid';
+import { useMemo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const EmployeeTable = ({ employees }) => {
-  // state for current page
-  const [currentPage, setCurrentPage] = useState(1);
+  const columns = [
+    { field: 'firstName', headerName: 'First Name', width: 130 },
+    { field: 'lastName', headerName: 'Last Name', width: 130 },
+    { field: 'dateOfBirth', headerName: 'Date of Birth', width: 110 },
+    { field: 'startDate', headerName: 'Start Date', width: 110 },
+    { field: 'street', headerName: 'Street', width: 200 },
+    { field: 'city', headerName: 'City', width: 160 },
+    { field: 'zipCode', headerName: 'Zip Code', width: 80 },
+    { field: 'state', headerName: 'State', width: 50 },
+    { field: 'department', headerName: 'Department', width: 150 },
+  ];
 
-  // Number of employees to display per page
-  const perPage = 10;
-
-  // Calculation of the start and end index based on the current page
-  const startIndex = (currentPage - 1) * perPage;
-  const endIndex = startIndex + perPage;
-
-  // Extract employees to display on the current page
-  const currentEmployees = employees.slice(startIndex, endIndex);
+  // Generate UUIDs once for each employee
+  const employeesWithIds = useMemo(() => {
+    return employees.map((employee) => ({
+      ...employee,
+      id: uuidv4(),
+    }));
+  }, [employees]);
 
   return (
     <div>
-      <table className='w-full table-auto'>
-        <EmployeeHead />
-        <tbody className='border-y-2 border-black'>
-          {employees.length > 0 ? (
-            currentEmployees.map((employee, index) => (
-              <EmployeeRow
-                key={index}
-                employee={employee}
-                index={startIndex + index}
-              />
-            ))
-          ) : (
-            <tr>
-              <td
-                colSpan='9'
-                className='border-y border-black bg-gray-100 px-4 py-3 text-center font-semibold'
-              >
-                No matching data found
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      <div className='flex items-center justify-between'>
-        <EntriesInfos
-          currentPage={currentPage}
-          totalItems={employees.length}
-          perPage={perPage}
-        />
-        <Paginate
-          currentPage={currentPage}
-          totalItems={employees.length}
-          perPage={perPage}
-          onPageChange={setCurrentPage}
-        />
-      </div>
+      <DataGrid
+        initialState={{
+          pagination: {
+            paginationModel: { pageSize: 10, page: 0 },
+          },
+        }}
+        autoHeight
+        rows={employeesWithIds}
+        columns={columns}
+        getRowId={(row) => row.id}
+        pageSizeOptions={[10, 25, 50, 100]}
+      />
     </div>
   );
 };
