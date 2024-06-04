@@ -1,17 +1,17 @@
 [
   {
-    "department":"Sales"
+    "department": "Sales"
   },
   {
-    "department":"Marketing"
+    "department": "Marketing"
   },
   {
-    "department":"Engineering"
+    "department": "Engineering"
   },
   {
-    "department":"Human Resources"
+    "department": "Human Resources"
   },
   {
-    "department":"Legal"
+    "department": "Legal"
   }
 ]

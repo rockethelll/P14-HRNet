@@ -1,8 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import SelectMenu from 'select-menu-oc-p14';
 
-import SelectMenu from '@/components/SelectMenu';
 import departments from '@/data/departments.json';
 import states from '@/data/states.json';
 import { createEmployee } from '@/state/employeeSlice';
@@ -42,7 +42,7 @@ const Form = () => {
       className='grid grid-cols-1 gap-x-4 sm:grid-cols-2 lg:gap-x-8'
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className='relative space-y-6 space-y-reverse rounded-md p-2 pb-2'>
+      <div className='relative mt-1 space-y-6 space-y-reverse rounded-md p-2'>
         <span></span>
         <Input
           {...register('firstName')}

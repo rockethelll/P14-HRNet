@@ -18,16 +18,16 @@ const Input = React.forwardRef(
       <div className='input-wrapper'>
         <label className='my-2 block text-sm font-medium text-gray-700'>
           {label}
+          <input
+            type={type}
+            className={`mt-2 w-full rounded-md border-2 px-4 py-2 shadow-sm ${
+              error ? 'border-red-500' : 'border-gray-200'
+            }`}
+            onBlur={handleBlur}
+            ref={ref}
+            {...rest}
+          />
         </label>
-        <input
-          type={type}
-          className={`mt-1 w-full rounded-md border-2 py-2 pl-4 shadow-sm ${
-            error ? 'border-red-500' : 'border-gray-200'
-          }`}
-          onBlur={handleBlur}
-          ref={ref}
-          {...rest}
-        />
         {error && (
           <div className='mt-2 text-sm font-bold text-red-500'>
             {error.message}

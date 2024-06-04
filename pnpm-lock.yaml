@@ -32,6 +32,12 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.2.1
         version: 4.2.1(vite@5.2.11(sass@1.77.2))
+      modal-oc-p14:
+        specifier: ^1.0.2
+        version: 1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3)
+      prop-types:
+        specifier: ^15.8.1
+        version: 15.8.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -50,12 +56,12 @@ importers:
       react-router-dom:
         specifier: ^6.23.1
         version: 6.23.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      select-menu-oc-p14:
+        specifier: ^1.0.1
+        version: 1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3)
       styled-components:
         specifier: ^6.1.11
         version: 6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      uuid:
-        specifier: ^9.0.1
-        version: 9.0.1
       vite:
         specifier: ^5.2.11
         version: 5.2.11(sass@1.77.2)
@@ -1502,6 +1508,13 @@ packages:
     resolution: {integrity: sha512-UZ7eQ+h8ywIRAW1hIEl2AqdwzJucU/Kp59+8kkZeSvafXhZjul247BvIJjEVFVeON6d7lM46XX1HXCduKAS8VA==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  modal-oc-p14@1.0.2:
+    resolution: {integrity: sha512-B2vuxMweWF+scK41pjBWFigvBqgZD2O6CnkyZ9ZzPv9MyRVmBuBeNjXORelSnisLDOUVQOP71pdQYJqHfR8qKQ==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+      tailwindcss: ^3.4.3
+
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
@@ -1871,6 +1884,13 @@ packages:
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
+  select-menu-oc-p14@1.0.1:
+    resolution: {integrity: sha512-ZDbw409J0myQtYpXRjll2fqke9zdJQTfrYmoxSQpkW3MPY+IJi4aPb4AhYsLAV0UpJrE9i2AYWMyMTcPpTnoYg==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+      tailwindcss: ^3.4.3
+
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -2047,10 +2067,6 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
-    hasBin: true
 
   vite@5.2.11:
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
@@ -3655,6 +3671,12 @@ snapshots:
 
   minipass@7.1.1: {}
 
+  modal-oc-p14@1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tailwindcss: 3.4.3
+
   ms@2.1.2: {}
 
   mz@2.7.0:
@@ -3982,6 +4004,12 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
+  select-menu-oc-p14@1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tailwindcss: 3.4.3
+
   semver@6.3.1: {}
 
   set-function-length@1.2.2:
@@ -4222,8 +4250,6 @@ snapshots:
       react: 18.3.1
 
   util-deprecate@1.0.2: {}
-
-  uuid@9.0.1: {}
 
   vite@5.2.11(sass@1.77.2):
     dependencies:

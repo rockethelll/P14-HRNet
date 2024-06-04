@@ -1,13 +1,21 @@
+import Modal from 'modal-oc-p14';
+
 import Navbar from '@/components/Navbar';
 import Router from '@/Router/Router';
-import Modal from '@/ui/Modal';
 import useModal from '@/utils/useModal';
 
 const App = () => {
+  // Destructure the isModalOpen and handleCloseModal functions from the useModal hook
   const { isModalOpen, handleCloseModal } = useModal();
   return (
     <>
-      {isModalOpen ? <Modal closeModal={handleCloseModal} /> : null}
+      {isModalOpen ? (
+        <Modal
+          isOpen={isModalOpen}
+          content='Employee Created'
+          closeModal={handleCloseModal}
+        />
+      ) : null}
       <Navbar />
       <Router />
     </>

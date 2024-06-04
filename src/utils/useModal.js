@@ -7,6 +7,7 @@ const useModal = () => {
   const isModalOpen = useSelector((state) => state.modal.isOpen);
   const dispatch = useDispatch();
 
+  // Function to close the modal
   const handleCloseModal = () => {
     dispatch(closeModal());
   };
