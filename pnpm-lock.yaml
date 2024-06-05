@@ -33,8 +33,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(vite@5.2.11(sass@1.77.2))
       modal-oc-p14:
-        specifier: ^1.0.2
-        version: 1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3)
+        specifier: ^1.0.3
+        version: 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3)
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
@@ -1508,8 +1508,8 @@ packages:
     resolution: {integrity: sha512-UZ7eQ+h8ywIRAW1hIEl2AqdwzJucU/Kp59+8kkZeSvafXhZjul247BvIJjEVFVeON6d7lM46XX1HXCduKAS8VA==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  modal-oc-p14@1.0.2:
-    resolution: {integrity: sha512-B2vuxMweWF+scK41pjBWFigvBqgZD2O6CnkyZ9ZzPv9MyRVmBuBeNjXORelSnisLDOUVQOP71pdQYJqHfR8qKQ==}
+  modal-oc-p14@1.0.3:
+    resolution: {integrity: sha512-uwTaf3AWIUIUObpdnV2PaCmcUKpxhxyTl2zNxQa6bbMiGL3lFyVacRl6d7kygzPxj4ARfB7ljuYDPoxShqVvtQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -3671,7 +3671,7 @@ snapshots:
 
   minipass@7.1.1: {}
 
-  modal-oc-p14@1.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3):
+  modal-oc-p14@1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.3):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
