@@ -1,4 +1,4 @@
-import Modal from 'modal-oc-p14';
+import Modal from '@rockethell/modal';
 import { createPortal } from 'react-dom';
 
 import Form from '@/components/Form/Form';
