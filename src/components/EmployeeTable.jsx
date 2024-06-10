@@ -4,58 +4,58 @@ const EmployeeTable = ({ employees }) => {
   const columns = [
     {
       field: 'firstName',
-      headerName: <strong>First Name</strong>,
+      headerName: 'First Name',
       minWidth: 130,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'lastName',
-      headerName: <strong>Last Name</strong>,
+      headerName: 'Last Name',
       minWidth: 130,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'startDate',
-      headerName: <strong>Start Date</strong>,
+      headerName: 'Start Date',
       width: 120,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'department',
-      headerName: <strong>Department</strong>,
+      headerName: 'Department',
       width: 150,
       flex: 0.7,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'dateOfBirth',
-      headerName: <strong>Date of Birth</strong>,
+      headerName: 'Date of Birth',
       width: 120,
       headerClassName: 'bg-green-700 text-white font-bold',
     },
     {
       field: 'street',
-      headerName: <strong>Street</strong>,
+      headerName: 'Street',
       width: 220,
       flex: 1,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'city',
-      headerName: <strong>City</strong>,
+      headerName: 'City',
       minWidth: 120,
       flex: 0.5,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'state',
-      headerName: <strong>State</strong>,
+      headerName: 'State',
       width: 70,
       headerClassName: 'bg-green-700 text-white',
     },
     {
       field: 'zipCode',
-      headerName: <strong>Zip Code</strong>,
+      headerName: 'Zip Code',
       width: 100,
       headerClassName: 'bg-green-700 text-white',
     },
@@ -66,14 +66,14 @@ const EmployeeTable = ({ employees }) => {
       <DataGrid
         style={{ width: '100%' }}
         initialState={{
-          pagination: {
-            paginationModel: { pageSize: 10, page: 0 },
-          },
+          pagination: { paginationModel: { pageSize: 10, page: 0 } },
         }}
-        autoHeight
+        // autoHeight
         rows={employees}
         columns={columns}
-        getRowId={(row) => `${row.firstName}-${row.lastName}-${row.birthDate}`}
+        getRowId={(row) =>
+          `${row.firstName}-${row.lastName}-${row.dateOfBirth}`
+        }
         pageSizeOptions={[10, 25, 50, 100]}
         disableColumnFilter
         disableDensitySelector

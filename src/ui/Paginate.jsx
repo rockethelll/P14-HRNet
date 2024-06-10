@@ -54,7 +54,7 @@ const Paginate = ({ currentPage, totalItems, perPage, onPageChange }) => {
               className={`block text-center leading-8 ${
                 currentPage === i + 1
                   ? 'size-8 rounded border-blue-600 bg-blue-600 text-white'
-                  : 'size-8 rounded border border-gray-200 bg-gray-100  text-gray-900'
+                  : 'size-8 rounded border border-gray-200 bg-gray-100 text-gray-900'
               }`}
             >
               {i + 1}
@@ -67,7 +67,7 @@ const Paginate = ({ currentPage, totalItems, perPage, onPageChange }) => {
           <button
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
-            className={`inline-flex size-8 items-center justify-center rounded border-gray-200 bg-gray-100  text-gray-900 ${
+            className={`inline-flex size-8 items-center justify-center rounded border-gray-200 bg-gray-100 text-gray-900 ${
               currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''
             }`}
           >

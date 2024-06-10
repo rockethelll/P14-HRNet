@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import EmployeeTable from '@/components/EmployeeTable';
@@ -7,10 +8,12 @@ import Title from '@/ui/Title';
 const Employees = () => {
   const employees = useSelector((state) => state.employee.employees);
 
+  const memoizedEmployees = useMemo(() => employees, [employees]);
+
   return (
     <Container>
       <Title title='Current Employees' />
-      <EmployeeTable employees={employees} />
+      <EmployeeTable employees={memoizedEmployees} />
     </Container>
   );
 };

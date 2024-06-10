@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import SelectMenu from '@rockethell/selectmenu';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import SelectMenu from 'select-menu-oc-p14';
 
 import departments from '@/data/departments.json';
 import states from '@/data/states.json';
