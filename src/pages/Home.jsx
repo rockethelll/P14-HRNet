@@ -21,7 +21,7 @@ const Home = () => {
             content='Employee Created'
             closeModal={handleCloseModal}
           />,
-          document.body,
+          document.getElementById('dialog'),
         )}
     </Container>
   );

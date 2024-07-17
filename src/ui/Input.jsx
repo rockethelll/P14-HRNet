@@ -15,7 +15,7 @@ const Input = React.forwardRef(
       }
     };
     return (
-      <div className='input-wrapper'>
+      <>
         <label className='my-2 block text-sm font-medium text-gray-700'>
           {label}
           <input
@@ -33,7 +33,7 @@ const Input = React.forwardRef(
             {error.message}
           </div>
         )}
-      </div>
+      </>
     );
   },
 );
