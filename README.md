@@ -30,7 +30,7 @@ Tests end to end are used to check the application with cypress:
 - Check if the user previously created is on the table
 
 ```bash
-npm cy:open
+npm run cypress
 ```
 
 ## Tech Stack
